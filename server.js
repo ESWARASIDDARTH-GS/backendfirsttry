@@ -3,8 +3,10 @@ const app= express();
 const cors = require("cors");
 const mongoose=require("mongoose");
 const PORT = process.env.port || 3001;
-app.options('*',cors());
-app.use(express.json());
+
+app.use(cors())
+app.options('*',cors())
+app.use(express.json())
 
 
 //step 1
