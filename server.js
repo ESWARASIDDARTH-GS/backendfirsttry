@@ -3,9 +3,7 @@ const app= express();
 const cors = require("cors");
 const mongoose=require("mongoose");
 const PORT = process.env.port || 3001;
-app.use(cors({
-    orgin:"*",
-}));
+app.options('*',cors());
 app.use(express.json());
 
 
