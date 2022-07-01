@@ -2,9 +2,12 @@ const express =require("express");
 const app= express();
 const cors = require("cors");
 const mongoose=require("mongoose");
-
-app.use(cors());
+const PORT = process.env.port || 3001;
+app.use(cors({
+    orgin:"*",
+}));
 app.use(express.json());
+
 
 //step 1
 //connecting to mongoose
@@ -15,6 +18,6 @@ mongoose.connect("mongodb+srv://siddharth:mongoose@pettycash.uabgufe.mongodb.net
 // using route
 app.use("/", require("./routes/noteRoute"));
 
-app.listen(3001,()=> {
-    console.log("express running in 3001")
+app.listen(PORT,()=> {
+    console.log(`express running in ${PORT}`)
 })
