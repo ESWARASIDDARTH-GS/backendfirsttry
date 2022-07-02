@@ -13,6 +13,7 @@ router.route("/create").post((req,res)=>{
     });
 
     newNote.save();
+    res.send('data added')
 });
 
 module.exports= router;
