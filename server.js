@@ -1,11 +1,10 @@
 const express =require("express");
 const app= express();
-const cors = require("cors");
-app.use(cors());
+// const cors = require("cors");
 const mongoose=require("mongoose");
 const PORT = process.env.port || 3001;
 
-
+// app.use(cors())
 // app.options('*',cors())
 app.use(express.json())
 
@@ -17,6 +16,10 @@ mongoose.connect("mongodb+srv://siddharth:mongoose@pettycash.uabgufe.mongodb.net
 
 //step 2
 // using route
+app.get("/",(req,res)=>{
+    res.send("server running")
+})
+
 app.use("/", require("./routes/noteRoute"));
 
 app.listen(PORT,()=> {
