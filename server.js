@@ -2,7 +2,7 @@ const express =require("express");
 const app= express();
 // const cors = require("cors");
 const mongoose=require("mongoose");
-const PORT = process.env.port || 3001;
+
 
 // app.use(cors())
 // app.options('*',cors())
@@ -22,6 +22,4 @@ app.get("/",(req,res)=>{
 
 app.use("/", require("./routes/noteRoute"));
 
-app.listen(PORT,()=> {
-    console.log(`express running in ${PORT}`)
-})
+app.listen(process.env.PORT || 5000)
